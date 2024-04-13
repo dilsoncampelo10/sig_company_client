@@ -1,6 +1,6 @@
-<nav class="navbar  ">
+<nav class="navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><i class="bi bi-buildings-fill"></i> Sig Company</a>
+      <a class="navbar-brand" [routerLink]="['/']"><i class="bi bi-buildings-fill"></i> Sig Company</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,16 +12,16 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Abrir Empresa</a>
+              <a class="nav-link" [routerLink]="['/criar/empresa']">Abrir Empresa</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Ser Sócio</a>
+                <a class="nav-link" [routerLink]="['/criar/socio']">Ser Sócio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Fazer Login</a>
+                <a class="nav-link" [routerLink]="['/login']">Fazer Login</a>
             </li>
             
           </ul>
