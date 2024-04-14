@@ -24,8 +24,10 @@ export class LoginFormComponent {
     this.loginService.login(this.user).subscribe({
       next: (data) =>{
         this.router.navigate(['criar/empresa']);
-
+        
         localStorage.setItem('token', data.token);
+
+        localStorage.setItem('user', JSON.stringify(data.partner));
       },
       error: (errorResponse) => {
         console.error(errorResponse);

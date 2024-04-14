@@ -3,4 +3,5 @@ export class Company {
     public cnpj: string = '';
     public site?: string = '';
     public phone: string = '';
+    public partner_id?: string = '';
 }

@@ -4,11 +4,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { CreateCompanyComponent } from './pages/companies/create-company/create-company.component';
 import { CreatePartnerComponent } from './pages/partners/create-partner/create-partner.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
     {path:'login',component:LoginComponent},
     {path:'',component:HomeComponent},
     {path:'criar/empresa',component:CreateCompanyComponent, canActivate:[AuthGuardService]},
     {path:'criar/socio',component:CreatePartnerComponent},
-    {path:'**',redirectTo:'/login'}
+    {path:'dashboard',component:DashboardComponent}
 ];
