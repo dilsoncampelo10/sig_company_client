@@ -1,0 +1,23 @@
+<section class="section_partner">
+    <section class="container pt-5">
+        <div class="card">
+            <div class="card-header">
+                <h1>+ Seja Sócio</h1>
+            </div>
+            <div class="card-body">
+                <form>
+                    <input type="text" name="name" [(ngModel)]="partner.name" class="form-control" placeholder="Informe seu nome">
+                    <input type="email" name="email" [(ngModel)]="partner.email" class="form-control mt-4" placeholder="Informe seu e-mail">
+                    <input type="password" name="password" [(ngModel)]="partner.password" class="form-control mt-4" placeholder="Informe uma senha">
+                    <button (click)="create()" class="btn btn-primary mt-3"><i class="bi bi-box-arrow-in-right"></i> Fazer Cadastro</button>
+                </form>
+            </div>
+        
+        </div>
+        
+    </section>
+    <!-- <div>
+        <app-modal *ngIf="showError"></app-modal>
+    </div> -->
+   
+</section>
