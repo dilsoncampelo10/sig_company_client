@@ -13,9 +13,9 @@ export class CompanyService {
   constructor(private httpClient:HttpClient) { }
 
   private url: string = environment.api+"/companies";
+  private token = localStorage.getItem('token');
 
   public create(company: Company): Observable<Company>{
-    const token = localStorage.getItem('token');
     const userString: string | null = localStorage.getItem('user');
 
     if (userString === null) {
@@ -26,12 +26,18 @@ export class CompanyService {
 
     company.partner_id = partner.id;
 
-    if (!token) {
+    if (!this.token) {
       throw new Error('Token JWT não encontrado no localStorage');
     }
 
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
 
     return this.httpClient.post<Company>(`${this.url}`,company,{headers});
+  }
+
+  public findAll():Observable<Company[]>{
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+
+    return this.httpClient.get<Company[]>(`${this.url}`,{headers});
   }
 }

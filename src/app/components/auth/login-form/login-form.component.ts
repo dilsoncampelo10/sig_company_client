@@ -3,13 +3,13 @@ import { Router, RouterModule } from '@angular/router';
 import { RequestLogin } from '../../../models/auth/RequestLogin';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../../services/auth/login.service';
-import { ModalComponent } from '../../modal/modal.component';
+
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [RouterModule,FormsModule,ModalComponent,CommonModule],
+  imports: [RouterModule,FormsModule,CommonModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss'
 })
@@ -30,15 +30,12 @@ export class LoginFormComponent {
         localStorage.setItem('user', JSON.stringify(data.partner));
       },
       error: (errorResponse) => {
-        console.error(errorResponse);
         this.showError = true;
       }
     });
       
   }
 
-  closeModal(){
-    this.showError = false;
-  }
+  
 
 }

@@ -1,4 +1,7 @@
 <section class="section_login">
+    <div class="alert alert-danger" role="alert" *ngIf="showError">
+        Credenciais Incorretas
+      </div>
     <section class="container pt-5">
         <div class="card login_card">
             <div class="card-header">
@@ -18,8 +21,5 @@
         </div>
         
     </section>
-    <div>
-        <app-modal *ngIf="showError"></app-modal>
-    </div>
    
 </section>
