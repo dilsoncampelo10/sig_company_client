@@ -12,7 +12,10 @@
                     <button (click)="create()" class="btn btn-primary mt-3"><i class="bi bi-box-arrow-in-right"></i> Fazer Cadastro</button>
                 </form>
             </div>
-        
+            <div class="card-footer d-flex justify-content-between">
+                <a [routerLink]="['/login']">Faça seu login </a>
+                <a [routerLink]="['/']">Voltar </a>
+            </div>
         </div>
         
     </section>

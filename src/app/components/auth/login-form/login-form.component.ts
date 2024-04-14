@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { RequestLogin } from '../../../models/auth/RequestLogin';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../../services/auth/login.service';
@@ -18,12 +18,14 @@ export class LoginFormComponent {
   public user: RequestLogin = new RequestLogin;
   public showError = false;
 
-  constructor(private loginService: LoginService){}
+  constructor(private loginService: LoginService, private router: Router){}
 
    login() {
     this.loginService.login(this.user).subscribe({
       next: (data) =>{
-        console.log(data);
+        this.router.navigate(['criar/empresa']);
+
+        localStorage.setItem('token', data.token);
       },
       error: (errorResponse) => {
         console.error(errorResponse);

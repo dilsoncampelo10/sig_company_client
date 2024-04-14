@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Partner } from '../../models/Partner';
 import { PartnerService } from '../../services/partner.service';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-form-partners',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,RouterModule],
   templateUrl: './form-partners.component.html',
   styleUrl: './form-partners.component.scss'
 })
