@@ -16,6 +16,10 @@
                 <a [routerLink]="['/']">Voltar </a>
             </div>
         </div>
+        
     </section>
- 
+    <div>
+        <app-modal *ngIf="showError"></app-modal>
+    </div>
+   
 </section>
